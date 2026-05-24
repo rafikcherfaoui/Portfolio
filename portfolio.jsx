@@ -258,6 +258,22 @@ function Hero() {
             >
               Contact
             </a>
+            <a href="/CV_rafik_cherfaoui.pdf" download style={{
+    display: "inline-flex", alignItems: "center", gap: 8,
+    padding: "12px 28px", borderRadius: 8, marginLeft: 10, marginTop: 32,
+    border: `1px solid ${BORDER}`, background: "transparent",
+    color: TEXT_MED, fontWeight: 600, fontSize: 14,
+    fontFamily: "'Inter', sans-serif", textDecoration: "none",
+    transition: "all 0.25s",
+  }}
+    onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT; e.currentTarget.style.color = ACCENT; e.currentTarget.style.transform = "translateY(-2px)"; }}
+    onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = TEXT_MED; e.currentTarget.style.transform = "translateY(0)"; }}
+  >
+    <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
+      <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
+    </svg>
+    Download CV
+  </a>
           </FadeIn>
 
           <FadeIn delay={0.45}>
