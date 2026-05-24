@@ -258,7 +258,7 @@ function Hero() {
             >
               Contact
             </a>
-            <a href="/CV_rafik_cherfaoui.pdf" download style={{
+            <a href="/CV_Rafik_Cherfaoui.pdf" download style={{
     display: "inline-flex", alignItems: "center", gap: 8,
     padding: "12px 28px", borderRadius: 8, marginLeft: 10, marginTop: 32,
     border: `1px solid ${BORDER}`, background: "transparent",
