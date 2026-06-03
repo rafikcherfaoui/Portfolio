@@ -48,6 +48,7 @@ const SKILLS = [
   { name: "Git", years: 1 },
   { name: "JWT", years: 1 },
   { name: "Python", years: 3 },
+  { name: "NumPy & Pandas", years: 1 },
   { name: "HTML & CSS", years: 3 },
   { name: "PHP", years: 2 },
   { name: "Java", years: 2 },
@@ -560,19 +561,19 @@ function Education() {
             </div>
             <div>
               <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: ACCENT, margin: "0 0 4px" }}>
-                @ Université Saad Dahlab Blida
+                @ Université Saad Dahlab Blida 1
               </p>
               <h3 style={{
                 fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700,
                 color: TEXT, margin: "0 0 6px",
               }}>
-                B.Sc. Computer Science (Licence Informatique)
+                Bachelor of Computer Science (Licence Informatique)
               </h3>
               <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: TEXT_DIM, margin: "0 0 12px" }}>
-                ISIL L3 · Graduating 2025
+                ISIL L3 · Graduated 2026, mension "très bien"
               </p>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 14, color: TEXT_MED, lineHeight: 1.7, margin: 0 }}>
-                Relevant coursework: Web Development, Programming Languages, Database Management, Algorithms. Key strengths in programming, problem analysis, and software logic.
+                Relevant coursework: Web Development, Programming Languages, Database Management, Algorithms. Key strengths in programming, UML, problem analysis, and software logic.
               </p>
             </div>
           </div>
