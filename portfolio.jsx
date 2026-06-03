@@ -51,6 +51,7 @@ const SKILLS = [
   { name: "NumPy & Pandas", years: 1 },
   { name: "HTML & CSS", years: 3 },
   { name: "PHP", years: 2 },
+  { name: "jQuery", years: 1 },
   { name: "Java", years: 2 },
   { name: "SQL", years: 3 },
   { name: "C", years: 4 },
