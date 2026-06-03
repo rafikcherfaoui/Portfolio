@@ -45,6 +45,7 @@ const SKILLS = [
   { name: "Express", years: 1 },
   { name: "MongoDB", years: 1 },
   { name: "React", years: 1 },
+  { name: "TypeScript", years: 1 },
   { name: "Git", years: 1 },
   { name: "JWT", years: 1 },
   { name: "Python", years: 3 },
