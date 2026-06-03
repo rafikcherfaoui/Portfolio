@@ -41,15 +41,18 @@ const SOCIALS = [
 
 const SKILLS = [
   { name: "JavaScript", years: 3 },
-  { name: "Node.js", years: 2 },
-  { name: "Express", years: 2 },
-  { name: "MongoDB", years: 2 },
+  { name: "Node.js", years: 1 },
+  { name: "Express", years: 1 },
+  { name: "MongoDB", years: 1 },
+  { name: "React", years: 1 },
+  { name: "Git", years: 1 },
+  { name: "JWT", years: 1 },
   { name: "Python", years: 3 },
   { name: "HTML & CSS", years: 3 },
   { name: "PHP", years: 2 },
   { name: "Java", years: 2 },
   { name: "SQL", years: 3 },
-  { name: "C", years: 3 },
+  { name: "C", years: 4 },
 ];
 
 const PROJECTS = [
