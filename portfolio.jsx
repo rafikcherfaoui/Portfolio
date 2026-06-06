@@ -62,7 +62,7 @@ const PROJECTS = [
   {
     num: "01",
     title: "DahlabConnect — University Social Platform",
-    desc: "Official internship & job platform for Université Saad Dahlab Blida 1. Connects students, teachers, and partner companies. Features institutional accounts, validated companies, and recommendation letters.",
+    desc: "Official internship & job platform for Université Saad Dahlab Blida 1. Connects students, teachers, and partner companies. Features institutional accounts, validated companies, and recommendation letters. admin@univ-blida.dz : admin1234",
     tags: ["Node.js", "Express", "MongoDB", "JWT"],
     link: "https://stagelink-beta.vercel.app/",
     image: "/dahlab.jpg",
@@ -70,7 +70,7 @@ const PROJECTS = [
   {
     num: "02",
     title: "HR Pulse — Hackathon HR Solutions",
-    desc: "based on a hackathon solution for managing talent across three pillars: recruitment, training, and employee wellbeing. The platform offers features for job postings, application tracking, training management, and employee engagement tools to enhance HR processes.",
+    desc: "based on a hackathon solution for managing talent across three pillars: recruitment, training, and employee wellbeing. The platform offers features for job postings, application tracking, training management, and employee engagement tools to enhance HR processes. admin@hrpulse.com : password123",
     tags: ["Node.js", "Express", "MySQL", "JWT"],
     link: "https://hr-pulse-blush.vercel.app/",
     image: "/hrpulse.png",
@@ -338,13 +338,13 @@ function Hero() {
                 Rafik Cherfaoui
               </p>
               <p style={{ fontFamily: "'JetBrains Mono', monospace", fontSize: 12, color: ACCENT }}>
-                CS Student · ISIL L3
+                CS Student · Bachelore Graduate ISIL
               </p>
               <p style={{ fontFamily: "'Inter', sans-serif", fontSize: 12, color: TEXT_DIM, marginTop: 8 }}>
                 I'm from Algeria
               </p>
               <div style={{ display: "flex", gap: 6, justifyContent: "center", marginTop: 14, flexWrap: "wrap", padding: "0 20px" }}>
-                {["Arabic", "French", "English"].map(l => (
+                {["Arabic", "French", "English", "German", "Kabyle"].map(l => (
                   <span key={l} style={{
                     fontSize: 11, padding: "3px 10px", borderRadius: 20,
                     background: ACCENT_DIM, color: ACCENT,
