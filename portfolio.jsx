@@ -71,7 +71,7 @@ const PROJECTS = [
     num: "02",
     title: "HR Pulse — Hackathon HR Solutions",
     desc: "based on a hackathon solution for managing talent across three pillars: recruitment, training, and employee wellbeing. The platform offers features for job postings, application tracking, training management, and employee engagement tools to enhance HR processes. admin@hrpulse.com : password123",
-    tags: ["Node.js", "Express", "MySQL", "JWT"],
+    tags: ["React", "Express", "MySQL", "JWT"],
     link: "https://hr-pulse-blush.vercel.app/",
     image: "/hrpulse.png",
   },
