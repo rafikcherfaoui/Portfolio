@@ -69,21 +69,23 @@ const PROJECTS = [
   },
   {
     num: "02",
+    title: "HR Pulse — Hackathon HR Solutions",
+    desc: "based on a hackathon solution for managing talent across three pillars: recruitment, training, and employee wellbeing. The platform offers features for job postings, application tracking, training management, and employee engagement tools to enhance HR processes.",
+    tags: ["Node.js", "Express", "MySQL", "JWT"],
+    link: "https://hr-pulse-blush.vercel.app/",
+    image: "/hrpulse.png",
+  },
+  {
+    num: "03",
     title: "Hackathon — Logistics",
     desc: "Built a logistics optimization solution during a competitive hackathon. Developed route planning and delivery management features under tight time constraints with a collaborative team.",
     tags: ["HTML", "CSS", "JavaScript", "Teamwork"],
   },
   {
-    num: "03",
+    num: "04",
     title: "Hackathon — Business",
     desc: "Created a business-oriented web application focused on solving real-world business challenges with practical software solutions, working collaboratively under pressure.",
     tags: ["JavaScript", "Problem Solving", "Agile"],
-  },
-  {
-    num: "04",
-    title: "Hackathon — HR Solutions",
-    desc: "Developed an HR management tool with features for employee tracking, recruitment workflows, and data visualization in a fast-paced hackathon environment.",
-    tags: ["HTML", "CSS", "JavaScript", "SQL"],
   },
   
 ];
