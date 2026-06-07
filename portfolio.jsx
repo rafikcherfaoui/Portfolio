@@ -56,6 +56,7 @@ const SKILLS = [
   { name: "Java", years: 2 },
   { name: "SQL", years: 3 },
   { name: "C", years: 4 },
+  { name: "UML", years: 2 },
 ];
 
 const PROJECTS = [
@@ -88,6 +89,14 @@ const PROJECTS = [
     title: "Hackathon — Business",
     desc: "Created a business-oriented web application focused on solving real-world business challenges with practical software solutions, working collaboratively under pressure.",
     tags: ["JavaScript", "Problem Solving", "Agile"],
+  },
+  {
+    num: "05",
+    title: "Livrili — Academic Mini ERP Project",
+    desc: "This is an academic project developped by me and 9 others of my classmates where we developped a mini ERP system that manages deliveries using only java for the backend.",
+    tags: ["Java", "Jakarta EE", "React", "SQL", "Teamwork"],
+    link: "https://github.com/rafikcherfaoui/mini_erp_project.git",
+    image: "/erp.png",
   },
   
 ];
