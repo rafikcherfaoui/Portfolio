@@ -77,9 +77,11 @@ const PROJECTS = [
   },
   {
     num: "03",
-    title: "Hackathon — Logistics",
-    desc: "Built a logistics optimization solution during a competitive hackathon. Developed route planning and delivery management features under tight time constraints with a collaborative team.",
-    tags: ["HTML", "CSS", "JavaScript", "Teamwork"],
+    title: "NextTransit — Logistics Hackathon solution",
+    desc: "Built a logistics optimization solution during a competitive hackathon. Developed a responsive prototype with a collaborative team, the prototype contains 3 rols : fleet manager ( password: fleet2024), general manager ( password: dg2024) and management controller ( password: controlling2024).",
+    tags: ["React", "TypeScript", "Teamwork", "Problem Solving"],
+    link: "https://pixel-perfect-clone-1464.vercel.app/",
+    image: "/nt.png",
   },
   {
     num: "04",
