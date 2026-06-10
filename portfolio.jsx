@@ -17,6 +17,7 @@ const NAV_LINKS = [
   { label: "#Home", href: "#home" },
   { label: "#Projects", href: "#projects" },
   { label: "#Skills", href: "#skills" },
+  { label: "#Certificates", href: "#certificates" },
   { label: "#Contact", href: "#contact" },
 ];
 
@@ -105,6 +106,16 @@ const PROJECTS = [
   
   
 ];
+
+const CERTIFICATES = [
+  {
+    num: "01",
+    title: "Business Challenge Hackathon Participant",
+    issuer: "CAP Ecole Nationale Polytechnique Alger",
+    year: "2025",
+    image: "/cap.png",
+  }
+]
 
 // ─── Hooks ────────────────────────────────────────────────────────
 function useInView(threshold = 0.12) {
@@ -546,6 +557,130 @@ function Projects() {
   );
 }
 
+// ─── Balanced Certificate Card Component ──────────────────────────
+function CertificateCard({ cert, index }) {
+  const [hovered, setHovered] = useState(false);
+  
+  return (
+    <FadeIn delay={index * 0.1}>
+      <div
+        onMouseEnter={() => setHovered(true)}
+        onMouseLeave={() => setHovered(false)}
+        style={{
+          borderRadius: 16,
+          background: BG_CARD,
+          border: `1px solid ${hovered ? ACCENT + "55" : BORDER}`,
+          transition: "all 0.35s cubic-bezier(.22,1,.36,1)",
+          transform: hovered ? "translateY(-4px)" : "translateY(0)",
+          boxShadow: hovered ? `0 10px 30px ${ACCENT}12` : "none",
+          display: "grid",
+          // Splits evenly on desktop, stacks gracefully on mobile
+          gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+          overflow: "hidden",
+          width: "100%",
+          maxWidth: 800, // Reduced from 1000px for a cleaner desktop footprint
+          
+        }}
+      >
+        {/* Clear Image Container */}
+        <div style={{ 
+          position: "relative", 
+          overflow: "hidden", 
+          height: 250, // Adjusted from 380px to keep it compact yet highly visible
+          background: "#131315",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderRight: `1px solid ${BORDER}`,
+        }}>
+          <img
+            src={cert.image}
+            alt={cert.title}
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "contain",
+              padding: "20px", // Clean framing edge
+              transition: "transform 0.4s ease",
+              transform: hovered ? "scale(1.02)" : "scale(1)",
+              display: "block",
+            }}
+          />
+          <div style={{
+            position: "absolute", inset: 0,
+            background: `linear-gradient(to right, transparent 80%, ${BG_CARD}11)`,
+            pointerEvents: "none"
+          }} />
+        </div>
+
+        {/* Text Details Section */}
+        <div style={{ 
+          padding: "32px", // Snugger padding for a cleaner fit
+          display: "flex", 
+          flexDirection: "column", 
+          justifyContent: "center" 
+        }}>
+          <div style={{
+            fontFamily: "'JetBrains Mono', monospace", fontSize: 12,
+            color: ACCENT, marginBottom: 10, fontWeight: 600,
+            letterSpacing: "0.5px"
+          }}>
+            CREDENTIAL // {cert.num} // {cert.year}
+          </div>
+          
+          <h3 style={{
+            fontFamily: "'Space Grotesk', sans-serif", 
+            fontSize: "clamp(18px, 2.5vw, 22px)", 
+            fontWeight: 700,
+            color: TEXT, margin: "0 0 12px", lineHeight: 1.3,
+          }}>
+            {cert.title}
+          </h3>
+          
+          <p style={{
+            fontFamily: "'JetBrains Mono', monospace", fontSize: 13,
+            color: TEXT_MED, marginBottom: 16, fontWeight: 500
+          }}>
+            <span style={{ color: TEXT_DIM }}>Issuer:</span> {cert.issuer}
+          </p>
+          
+          <div style={{
+            width: 30, height: 1.5, 
+            background: ACCENT, 
+            marginBottom: 16,
+            opacity: hovered ? 1 : 0.4,
+            transition: "all 0.3s"
+          }} />
+          
+          <p style={{
+            fontFamily: "'Inter', sans-serif", fontSize: 14, color: TEXT_MED,
+            lineHeight: 1.6, margin: 0,
+          }}>
+            {cert.desc}
+          </p>
+        </div>
+      </div>
+    </FadeIn>
+  );
+}
+
+// ─── Main Certificates Section Component ──────────────────────────
+function Certificates() {
+  return (
+    <section id="certificates" style={{ padding: "80px 28px" }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        <FadeIn>
+          <SectionPath path="credentials" title="Certificates & Achievements" />
+        </FadeIn>
+        
+        <div style={{ display: "flex", flexDirection: "column", gap: 12 }}>
+          {CERTIFICATES.map((c, i) => <CertificateCard key={c.num} cert={c} index={i} />)}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 // ─── Education ────────────────────────────────────────────────────
 function Education() {
   const [hovered, setHovered] = useState(false);
@@ -625,11 +760,11 @@ function Contact() {
             </p>
             <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
               {[
-                { icon: "✉", label: "cherfaouirafk2@gmail.com", url: "mailto:cherfaouirafk2@gmail.com" },
-                { icon: "☎", label: " 05 40 80 97 91", url: "tel:0540809791" },
-                { icon: "⌂", label: "github.com/rafikcherfaoui", url: "https://github.com/rafikcherfaoui" },
-                { icon: "in", label: "linkedin.com/in/rafik-cherfaoui", url: "https://www.linkedin.com/in/rafik-cherfaoui-6001a4261" },
-                { icon: "dc", label: "discord.gg/rafik7539", url: "https://discord.gg/zFEvDwny" }
+                { imgSrc: "/gmail.ico", label: "cherfaouirafk2@gmail.com", url: "mailto:cherfaouirafk2@gmail.com" },
+                { imgSrc: "/call.ico", label: " 05 40 80 97 91", url: "tel:0540809791" },
+                { imgSrc: "/linked.ico", label: "linkedin.com/in/rafik-cherfaoui", url: "https://www.linkedin.com/in/rafik-cherfaoui-6001a4261" },
+                { imgSrc: "/discord.ico", label: "discord.gg/rafik7539", url: "https://discord.gg/zFEvDwny" },
+                { imgSrc: "/insta.ico", label: "instagram.com/rafik_i_guess", url: "https://www.instagram.com/rafik_i_guess" },
               ].map((c) => (
                 <a key={c.label} href={c.url} target="_blank" rel="noopener noreferrer"
                   style={{
@@ -641,13 +776,24 @@ function Contact() {
                   onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT + "55"; e.currentTarget.style.transform = "translateX(4px)"; }}
                   onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.transform = "translateX(0)"; }}
                 >
+                  {/* Outer Wrapper for the Logo */}
                   <span style={{
                     width: 36, height: 36, borderRadius: 8,
                     background: ACCENT_DIM,
                     display: "flex", alignItems: "center", justifyContent: "center",
-                    fontSize: 16, color: ACCENT, fontWeight: 700,
-                    fontFamily: "'JetBrains Mono', monospace", flexShrink: 0,
-                  }}>{c.icon}</span>
+                    flexShrink: 0, overflow: "hidden", padding: "8px" // Padding keeps the logo from touching the edges
+                  }}>
+                    <img 
+                      src={c.imgSrc} 
+                      alt="" 
+                      style={{ 
+                        width: "100%", 
+                        height: "100%", 
+                        objectFit: "contain",
+                        display: "block"
+                      }} 
+                    />
+                  </span>
                   <span style={{
                     fontFamily: "'JetBrains Mono', monospace", fontSize: 13,
                     color: TEXT_MED, fontWeight: 500,
@@ -699,6 +845,7 @@ export default function Portfolio() {
       <Skills />
       <Projects />
       <Education />
+      <Certificates />
       <Contact />
       <Footer />
     </div>
