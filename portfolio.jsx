@@ -15,8 +15,8 @@ const GREEN = "#4ade80";
 // ─── Data ─────────────────────────────────────────────────────────
 const NAV_LINKS = [
   { label: "#Home", href: "#home" },
-  { label: "#Projects", href: "#projects" },
   { label: "#Skills", href: "#skills" },
+  { label: "#Projects", href: "#projects" },
   { label: "#Certificates", href: "#certificates" },
   { label: "#Contact", href: "#contact" },
 ];
@@ -91,18 +91,21 @@ const PROJECTS = [
   },
   {
     num: "04",
+    title: "ReArtha — Business Hackathon Project",
+    desc: "Created a business-oriented website during a hackathon that solves the problem of diaper waste by gamifying the recycling process. The platform encourages users to recycle diapers through rewards with an admin dashboard for managing users and tracking recycling efforts (admin@reartha.com : admin123)",
+    tags: ["MERN", "JWT", "Problem Solving", "Agile"],
+    link: "https://reartha.vercel.app/",
+    image: "/reartha.png",
+  },
+  {
+    num: "05",
     title: "Livrili — Academic Mini ERP Project",
     desc: "This is an academic project developped by me and 9 others of my classmates where we developped a mini ERP system that manages deliveries using only java for the backend.",
     tags: ["Java", "Jakarta EE", "React", "SQL", "Teamwork"],
     link: "https://github.com/rafikcherfaoui/mini_erp_project.git",
     image: "/erp.png",
   },
-  {
-    num: "05",
-    title: "Hackathon — Business",
-    desc: "Created a business-oriented web application focused on solving real-world business challenges with practical software solutions, working collaboratively under pressure.",
-    tags: ["JavaScript", "Problem Solving", "Agile"],
-  },
+  
   
   
 ];
