@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 
-// ─── Palette ──────────────────────────────────────────────────────
+// Palette 
 const BG = "#0a0a0a";
 const BG_CARD = "#111113";
 const BG_ELEVATED = "#18181b";
@@ -12,7 +12,7 @@ const TEXT_MED = "#a1a1aa";
 const TEXT_DIM = "#52525b";
 const GREEN = "#4ade80";
 
-// ─── Data ─────────────────────────────────────────────────────────
+//  Data 
 const NAV_LINKS = [
   { label: "#Home", href: "#home" },
   { label: "#Skills", href: "#skills" },
@@ -120,7 +120,7 @@ const CERTIFICATES = [
   }
 ]
 
-// ─── Hooks ────────────────────────────────────────────────────────
+// Hooks
 function useInView(threshold = 0.12) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
@@ -151,7 +151,7 @@ function FadeIn({ children, delay = 0, style = {} }) {
   );
 }
 
-// ─── Section Header (terminal path style) ─────────────────────────
+// Section Header (terminal path style) 
 function SectionPath({ path, title }) {
   return (
     <div style={{ marginBottom: 40 }}>
@@ -172,7 +172,7 @@ function SectionPath({ path, title }) {
   );
 }
 
-// ─── Navbar ───────────────────────────────────────────────────────
+// Navbar 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -219,7 +219,7 @@ function Navbar() {
   );
 }
 
-// ─── Hero ─────────────────────────────────────────────────────────
+// Hero 
 function Hero() {
   const [typed, setTyped] = useState("");
   const full = "An individual who is passionate about software development and web technologies. My journey in tech is driven by a keen interest in coding, problem solving, and staying up-to-date with the latest trends.";
@@ -237,7 +237,7 @@ function Hero() {
       minHeight: "100vh", display: "flex", alignItems: "center",
       position: "relative", overflow: "hidden", padding: "120px 28px 80px",
     }}>
-      {/* Gradient orbs */}
+      
       <div style={{
         position: "absolute", width: 600, height: 600, borderRadius: "50%",
         background: `radial-gradient(circle, ${ACCENT}12 0%, transparent 65%)`,
@@ -279,7 +279,7 @@ function Hero() {
               fontFamily: "'Inter', sans-serif", fontSize: 15,
               color: TEXT_DIM, lineHeight: 1.7, maxWidth: 520, marginTop: 16,
             }}>
-              My passion for technology goes beyond personal achievement — it's about leveraging it to solve real-world problems.
+              My passion for technology and entrepreneurship goes beyond personal achievement — it's about leveraging it to solve real-world problems.
             </p>
           </FadeIn>
 
@@ -289,10 +289,10 @@ function Hero() {
               marginTop: 32, padding: "12px 28px", borderRadius: 8,
               background: ACCENT, color: "#000", fontWeight: 600, fontSize: 14,
               fontFamily: "'Inter', sans-serif", textDecoration: "none",
-              transition: "all 0.25s", boxShadow: `0 0 20px ${ACCENT}44`,
+              transition: "all 0.25s", 
             }}
-              onMouseEnter={e => { e.currentTarget.style.boxShadow = `0 0 30px ${ACCENT}66`; e.currentTarget.style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => { e.currentTarget.style.boxShadow = `0 0 20px ${ACCENT}44`; e.currentTarget.style.transform = "translateY(0)"; }}
+              onMouseEnter={e => {  e.currentTarget.style.transform = "translateY(-2px)"; }}
+              onMouseLeave={e => {  e.currentTarget.style.transform = "translateY(0)"; }}
             >
               Contact
             </a>
@@ -334,7 +334,7 @@ function Hero() {
           </FadeIn>
         </div>
 
-        {/* Profile avatar area */}
+        
         <FadeIn delay={0.3} style={{ display: "flex", justifyContent: "center" }}>
           <div style={{
             width: 320, height: 380, borderRadius: 24,
@@ -343,7 +343,7 @@ function Hero() {
             display: "flex", alignItems: "center", justifyContent: "center",
             position: "relative", overflow: "hidden",
           }}>
-            {/* Decorative gradient inside */}
+            
             <div style={{
               position: "absolute", bottom: 0, left: 0, right: 0, height: "50%",
               background: `linear-gradient(to top, ${ACCENT}10, transparent)`,
@@ -391,7 +391,7 @@ function Hero() {
   );
 }
 
-// ─── Skills ───────────────────────────────────────────────────────
+// Skills 
 function SkillCard({ skill, index }) {
   const [hovered, setHovered] = useState(false);
   return (
@@ -441,7 +441,7 @@ function Skills() {
   );
 }
 
-// ─── Projects ─────────────────────────────────────────────────────
+// Projects 
 function ProjectCard({ project, index }) {
   const [hovered, setHovered] = useState(false);
   const inner = (
@@ -454,7 +454,6 @@ function ProjectCard({ project, index }) {
         border: `1px solid ${hovered ? ACCENT + "55" : BORDER}`,
         transition: "all 0.35s cubic-bezier(.22,1,.36,1)",
         transform: hovered ? "translateY(-4px)" : "translateY(0)",
-        boxShadow: hovered ? `0 8px 30px ${ACCENT}15` : "none",
         display: "flex", flexDirection: "column", height: "100",
         overflow: "hidden",
         cursor: project.link ? "pointer" : "default",
@@ -560,7 +559,7 @@ function Projects() {
   );
 }
 
-// ─── Balanced Certificate Card Component ──────────────────────────
+// Balanced Certificate Card Component 
 function CertificateCard({ cert, index }) {
   const [hovered, setHovered] = useState(false);
   
@@ -575,21 +574,20 @@ function CertificateCard({ cert, index }) {
           border: `1px solid ${hovered ? ACCENT + "55" : BORDER}`,
           transition: "all 0.35s cubic-bezier(.22,1,.36,1)",
           transform: hovered ? "translateY(-4px)" : "translateY(0)",
-          boxShadow: hovered ? `0 10px 30px ${ACCENT}12` : "none",
           display: "grid",
-          // Splits evenly on desktop, stacks gracefully on mobile
+          
           gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
           overflow: "hidden",
           width: "100%",
-          maxWidth: 800, // Reduced from 1000px for a cleaner desktop footprint
+          maxWidth: 800, 
           
         }}
       >
-        {/* Clear Image Container */}
+        
         <div style={{ 
           position: "relative", 
           overflow: "hidden", 
-          height: 250, // Adjusted from 380px to keep it compact yet highly visible
+          height: 250, 
           background: "#131315",
           display: "flex",
           alignItems: "center",
@@ -616,9 +614,9 @@ function CertificateCard({ cert, index }) {
           }} />
         </div>
 
-        {/* Text Details Section */}
+        
         <div style={{ 
-          padding: "32px", // Snugger padding for a cleaner fit
+          padding: "32px", 
           display: "flex", 
           flexDirection: "column", 
           justifyContent: "center" 
@@ -667,7 +665,7 @@ function CertificateCard({ cert, index }) {
   );
 }
 
-// ─── Main Certificates Section Component ──────────────────────────
+// Main Certificates Section Component 
 function Certificates() {
   return (
     <section id="certificates" style={{ padding: "80px 28px" }}>
@@ -684,7 +682,7 @@ function Certificates() {
   );
 }
 
-// ─── Education ────────────────────────────────────────────────────
+//Education 
 function Education() {
   const [hovered, setHovered] = useState(false);
   return (
@@ -741,7 +739,7 @@ function Education() {
   );
 }
 
-// ─── Contact ──────────────────────────────────────────────────────
+//Contact 
 function Contact() {
   return (
     <section id="contact" style={{ padding: "80px 28px 100px" }}>
@@ -811,7 +809,7 @@ function Contact() {
   );
 }
 
-// ─── Footer ───────────────────────────────────────────────────────
+// Footer 
 function Footer() {
   return (
     <footer style={{
@@ -828,7 +826,7 @@ function Footer() {
   );
 }
 
-// ─── App ──────────────────────────────────────────────────────────
+// App 
 export default function Portfolio() {
   return (
     <div style={{ background: BG, minHeight: "100vh", overflowX: "hidden" }}>
