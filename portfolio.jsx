@@ -117,6 +117,13 @@ const CERTIFICATES = [
     issuer: "CAP Ecole Nationale Polytechnique Alger",
     year: "2025",
     image: "/cap.png",
+  },
+  {
+    num: "02",
+    title: "Bachelore Degree in Computer Science",
+    issuer: "Saad Dahlab University of Blida 1",
+    year: "2026",
+    image: "/diplom.jpeg",
   }
 ]
 
