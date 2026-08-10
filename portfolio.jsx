@@ -113,13 +113,20 @@ const PROJECTS = [
 const CERTIFICATES = [
   {
     num: "01",
+    title: "Innovative Project Label",
+    issuer: "National Startup Committee (Algeria)",
+    year: "2026",
+    image: "/label.jpeg",
+  },
+  {
+    num: "02",
     title: "Business Challenge Hackathon Participant",
     issuer: "CAP Ecole Nationale Polytechnique Alger",
     year: "2025",
     image: "/cap.png",
   },
   {
-    num: "02",
+    num: "03",
     title: "Bachelore Degree in Computer Science",
     issuer: "Saad Dahlab University of Blida 1",
     year: "2026",
