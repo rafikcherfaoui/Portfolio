@@ -659,13 +659,6 @@ function CertificateCard({ cert, index }) {
             <span style={{ color: TEXT_DIM }}>Issuer:</span> {cert.issuer}
           </p>
           
-          <div style={{
-            width: 30, height: 1.5, 
-            background: ACCENT, 
-            marginBottom: 16,
-            opacity: hovered ? 1 : 0.4,
-            transition: "all 0.3s"
-          }} />
           
           <p style={{
             fontFamily: "'Inter', sans-serif", fontSize: 14, color: TEXT_MED,
