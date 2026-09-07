@@ -69,7 +69,7 @@ const PROJECTS = [
     num: "01",
     title: "DahlabConnect — University Social Platform",
     desc: "Official internship & job platform for Université Saad Dahlab Blida 1. Connects students, teachers, and partner companies. Features institutional accounts, validated companies, and recommendation letters. admin@univ-blida.dz : admin1234",
-    tags: ["Node.js", "Express", "MongoDB", "JWT"],
+    tags: ["Node.js | Express | MongoDB | JWT"],
     link: "https://stagelink-beta.vercel.app/",
     image: "/dahlab.jpg",
   },
@@ -77,7 +77,7 @@ const PROJECTS = [
     num: "02",
     title: "HR Pulse — Hackathon HR Solutions",
     desc: "based on a hackathon solution for managing talent across three pillars: recruitment, training, and employee wellbeing. The platform offers features for job postings, application tracking, training management, and employee engagement tools to enhance HR processes. admin@hrpulse.com : password123",
-    tags: ["React", "Express", "MySQL", "JWT"],
+    tags: ["React | Express | MySQL | JWT"],
     link: "https://hr-pulse-blush.vercel.app/",
     image: "/hrpulse.png",
   },
@@ -85,7 +85,7 @@ const PROJECTS = [
     num: "03",
     title: "NextTransit — Logistics Hackathon solution",
     desc: "Built a logistics optimization solution during a competitive hackathon. Developed a responsive prototype with a collaborative team, the prototype contains 3 rols : fleet manager ( password: fleet2024), general manager ( password: dg2024) and management controller ( password: controlling2024).",
-    tags: ["React", "TypeScript", "Teamwork", "Problem Solving"],
+    tags: ["React | TypeScript | Teamwork | Problem Solving"],
     link: "https://pixel-perfect-clone-1464.vercel.app/",
     image: "/nt.png",
   },
@@ -93,7 +93,7 @@ const PROJECTS = [
     num: "04",
     title: "ReArtha — Business Hackathon Project",
     desc: "Created a business-oriented website during a hackathon that solves the problem of diaper waste by gamifying the recycling process. The platform encourages users to recycle diapers through rewards with an admin dashboard for managing users and tracking recycling efforts (admin@reartha.com : admin123)",
-    tags: ["MERN", "JWT", "Problem Solving", "Agile"],
+    tags: ["MERN | JWT | Problem Solving | Agile"],
     link: "https://reartha.vercel.app/",
     image: "/reartha.png",
   },
@@ -101,7 +101,7 @@ const PROJECTS = [
     num: "05",
     title: "Livrili — Academic Mini ERP Project",
     desc: "This is an academic project developped by me and 9 others of my classmates where we developped a mini ERP system that manages deliveries using only java for the backend.",
-    tags: ["Java", "Jakarta EE", "React", "SQL", "Teamwork"],
+    tags: ["Java | Jakarta EE | React | SQL | Teamwork"],
     link: "https://github.com/rafikcherfaoui/mini_erp_project.git",
     image: "/erp.png",
   },
@@ -116,7 +116,7 @@ const CERTIFICATES = [
     title: "Innovative Project Label",
     issuer: "National Startup Committee (Algeria)",
     year: "2026",
-    image: "/label.jpeg",
+    image: "/label",
   },
   {
     num: "02",
@@ -254,12 +254,10 @@ function Hero() {
       
       <div style={{
         position: "absolute", width: 600, height: 600, borderRadius: "50%",
-        background: `radial-gradient(circle, ${ACCENT}12 0%, transparent 65%)`,
         top: "-15%", right: "-10%", filter: "blur(80px)", pointerEvents: "none",
       }} />
       <div style={{
         position: "absolute", width: 400, height: 400, borderRadius: "50%",
-        background: `radial-gradient(circle, #a78bfa15 0%, transparent 65%)`,
         bottom: "5%", left: "-5%", filter: "blur(60px)", pointerEvents: "none",
       }} />
 
@@ -305,8 +303,6 @@ function Hero() {
               fontFamily: "'Inter', sans-serif", textDecoration: "none",
               transition: "all 0.25s", 
             }}
-              onMouseEnter={e => {  e.currentTarget.style.transform = "translateY(-2px)"; }}
-              onMouseLeave={e => {  e.currentTarget.style.transform = "translateY(0)"; }}
             >
               Contact
             </a>
@@ -318,8 +314,8 @@ function Hero() {
     fontFamily: "'Inter', sans-serif", textDecoration: "none",
     transition: "all 0.25s",
   }}
-    onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT; e.currentTarget.style.color = ACCENT; e.currentTarget.style.transform = "translateY(-2px)"; }}
-    onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = TEXT_MED; e.currentTarget.style.transform = "translateY(0)"; }}
+    onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT }}
+    onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER }}
   >
     <svg width="16" height="16" fill="none" stroke="currentColor" strokeWidth="1.5" viewBox="0 0 24 24">
       <path d="M12 15V3m0 12l-4-4m4 4l4-4M2 17l.621 2.485A2 2 0 004.561 21h14.878a2 2 0 001.94-1.515L22 17"/>
@@ -338,8 +334,7 @@ function Hero() {
                     display: "flex", alignItems: "center", justifyContent: "center",
                     color: TEXT_MED, textDecoration: "none", transition: "all 0.25s",
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT; e.currentTarget.style.color = ACCENT; e.currentTarget.style.transform = "translateY(-2px)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.color = TEXT_MED; e.currentTarget.style.transform = "translateY(0)"; }}
+                 
                 >
                   {s.svg}
                 </a>
@@ -416,9 +411,8 @@ function SkillCard({ skill, index }) {
         style={{
           padding: "20px 22px", borderRadius: 14,
           background: hovered ? BG_ELEVATED : BG_CARD,
-          border: `1px solid ${hovered ? ACCENT + "44" : BORDER}`,
+          border: `1px solid`,
           transition: "all 0.3s ease",
-          transform: hovered ? "translateY(-2px)" : "translateY(0)",
         }}
       >
         <p style={{
@@ -467,7 +461,6 @@ function ProjectCard({ project, index }) {
         background: BG_CARD,
         border: `1px solid ${hovered ? ACCENT + "55" : BORDER}`,
         transition: "all 0.35s cubic-bezier(.22,1,.36,1)",
-        transform: hovered ? "translateY(-4px)" : "translateY(0)",
         display: "flex", flexDirection: "column", height: "100",
         overflow: "hidden",
         cursor: project.link ? "pointer" : "default",
@@ -481,7 +474,6 @@ function ProjectCard({ project, index }) {
             style={{
               width: "100%", height: "100%", objectFit: "cover", objectPosition: "top",
               transition: "transform 0.4s ease",
-              transform: hovered ? "scale(1.04)" : "scale(1)",
               display: "block",
             }}
           />
@@ -534,7 +526,7 @@ function ProjectCard({ project, index }) {
             <span key={t} style={{
               fontSize: 11, fontWeight: 600, fontFamily: "'JetBrains Mono', monospace",
               padding: "4px 12px", borderRadius: 20,
-              background: ACCENT_DIM, color: ACCENT,
+              color: ACCENT,
             }}>{t}</span>
           ))}
         </div>
@@ -587,7 +579,6 @@ function CertificateCard({ cert, index }) {
           background: BG_CARD,
           border: `1px solid ${hovered ? ACCENT + "55" : BORDER}`,
           transition: "all 0.35s cubic-bezier(.22,1,.36,1)",
-          transform: hovered ? "translateY(-4px)" : "translateY(0)",
           display: "grid",
           
           gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
@@ -617,7 +608,6 @@ function CertificateCard({ cert, index }) {
               objectFit: "contain",
               padding: "20px", // Clean framing edge
               transition: "transform 0.4s ease",
-              transform: hovered ? "scale(1.02)" : "scale(1)",
               display: "block",
             }}
           />
@@ -700,8 +690,7 @@ function Education() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <div
-            onMouseEnter={() => setHovered(true)}
-            onMouseLeave={() => setHovered(false)}
+            
             style={{
               padding: 28, borderRadius: 18,
               background: BG_CARD, border: `1px solid ${hovered ? ACCENT + "44" : BORDER}`,
@@ -781,8 +770,8 @@ function Contact() {
                     background: BG_ELEVATED, border: `1px solid ${BORDER}`,
                     textDecoration: "none", transition: "all 0.25s",
                   }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = ACCENT + "55"; e.currentTarget.style.transform = "translateX(4px)"; }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = BORDER; e.currentTarget.style.transform = "translateX(0)"; }}
+                  onMouseEnter={e => {e.currentTarget.style.transform = "translateX(4px)"; }}
+                  onMouseLeave={e => {e.currentTarget.style.transform = "translateX(0)"; }}
                 >
                   {/* Outer Wrapper for the Logo */}
                   <span style={{
