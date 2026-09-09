@@ -165,7 +165,7 @@ function FadeIn({ children, delay = 0, style = {} }) {
   );
 }
 
-// Section Header (terminal path style) 
+// Section Header 
 function SectionPath({ path, title }) {
   return (
     <div style={{ marginBottom: 40 }}>
@@ -199,22 +199,23 @@ function Navbar() {
   return (
     <nav style={{
       position: "fixed", top: 0, left: 0, right: 0, zIndex: 200,
-      background: scrolled ? "rgba(10,10,10,0.85)" : "transparent",
-      backdropFilter: scrolled ? "blur(16px) saturate(180%)" : "none",
-      borderBottom: scrolled ? `1px solid ${BORDER}` : "1px solid transparent",
+      background: (scrolled || menuOpen) ? "rgba(10,10,10,0.92)" : "transparent",
+      backdropFilter: (scrolled || menuOpen) ? "blur(16px) saturate(180%)" : "none",
+      borderBottom: (scrolled || menuOpen) ? `1px solid ${BORDER}` : "1px solid transparent",
       transition: "all 0.4s ease",
     }}>
-      <div style={{
+      <div className="nav-inner" style={{
         maxWidth: 1100, margin: "0 auto", padding: "0 28px",
         display: "flex", alignItems: "center", justifyContent: "space-between", height: 64,
       }}>
-        <a href="#home" style={{
+        <a href="#home" onClick={() => setMenuOpen(false)} style={{
           fontFamily: "'JetBrains Mono', monospace", fontWeight: 700, fontSize: 20,
           color: ACCENT, textDecoration: "none", letterSpacing: "-0.5px",
         }}>
           {"rafik.cherfaoui"}
         </a>
-        <div style={{ display: "flex", gap: 6 }}>
+
+        <div className="nav-links" style={{ display: "flex", gap: 6 }}>
           {NAV_LINKS.map((l) => (
             <a key={l.label} href={l.href} style={{
               padding: "6px 14px", borderRadius: 6, fontSize: 13, fontWeight: 500,
@@ -228,6 +229,43 @@ function Navbar() {
             </a>
           ))}
         </div>
+
+        <button
+          className="hamburger-btn"
+          onClick={() => setMenuOpen(o => !o)}
+          aria-label="Toggle menu"
+          aria-expanded={menuOpen}
+          style={{
+            display: "none", width: 38, height: 38, borderRadius: 8,
+            border: `1px solid ${BORDER}`, background: BG_CARD,
+            alignItems: "center", justifyContent: "center", color: TEXT,
+            cursor: "pointer", flexShrink: 0,
+          }}
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
+            {menuOpen ? (
+              <path d="M6 6l12 12M18 6L6 18" />
+            ) : (
+              <path d="M3 6h18M3 12h18M3 18h18" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      
+      <div className={`nav-mobile-menu ${menuOpen ? "nav-mobile-menu-open" : ""}`} style={{
+        display: "none", flexDirection: "column", padding: "8px 28px 0px",
+        gap: 4, borderBottom: `1px solid ${BORDER}`,
+      }}>
+        {NAV_LINKS.map((l) => (
+          <a key={l.label} href={l.href} onClick={() => setMenuOpen(false)} style={{
+            padding: "12px 14px", borderRadius: 8, fontSize: 14, fontWeight: 500,
+            fontFamily: "'JetBrains Mono', monospace",
+            color: TEXT_MED, textDecoration: "none", background: BG_CARD,
+          }}>
+            {l.label}
+          </a>
+        ))}
       </div>
     </nav>
   );
@@ -261,7 +299,7 @@ function Hero() {
         bottom: "5%", left: "-5%", filter: "blur(60px)", pointerEvents: "none",
       }} />
 
-      <div style={{ maxWidth: 1100, margin: "0 auto", width: "100%", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr 380px", gap: 60, alignItems: "center" }}>
+      <div className="hero-inner" style={{ maxWidth: 1100, margin: "0 auto", width: "100%", position: "relative", zIndex: 1, display: "grid", gridTemplateColumns: "1fr 380px", gap: 60, alignItems: "center" }}>
         <div>
           <FadeIn>
             <p style={{
@@ -325,7 +363,7 @@ function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.45}>
-            <div style={{ display: "flex", gap: 12, marginTop: 28 }}>
+            <div className="hero-socials" style={{ display: "flex", gap: 12, marginTop: 28 }}>
               {SOCIALS.map((s) => (
                 <a key={s.name} href={s.url} target="_blank" rel="noopener noreferrer" title={s.name}
                   style={{
@@ -344,9 +382,9 @@ function Hero() {
         </div>
 
         
-        <FadeIn delay={0.3} style={{ display: "flex", justifyContent: "center" }}>
+        <FadeIn delay={0.3} style={{ display: "flex", justifyContent: "center", width: "100%" }}>
           <div style={{
-            width: 320, height: 380, borderRadius: 24,
+            width: "100%", maxWidth: 320, height: 380, borderRadius: 24,
             background: `linear-gradient(145deg, ${BG_ELEVATED}, ${BG_CARD})`,
             border: `1px solid ${BORDER}`,
             display: "flex", alignItems: "center", justifyContent: "center",
@@ -437,7 +475,7 @@ function Skills() {
         <FadeIn>
           <SectionPath path="skills" title="Knowledge" />
         </FadeIn>
-        <div style={{
+        <div className="skills-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
           gap: 16,
@@ -553,7 +591,7 @@ function Projects() {
         <FadeIn>
           <SectionPath path="highlights" title="Featured Projects" />
         </FadeIn>
-        <div style={{
+        <div className="projects-grid" style={{
           display: "grid",
           gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
           gap: 24,
@@ -572,6 +610,7 @@ function CertificateCard({ cert, index }) {
   return (
     <FadeIn delay={index * 0.1}>
       <div
+        className="cert-card"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
@@ -589,7 +628,7 @@ function CertificateCard({ cert, index }) {
         }}
       >
         
-        <div style={{ 
+        <div className="cert-image-wrap" style={{ 
           position: "relative", 
           overflow: "hidden", 
           height: 250, 
@@ -690,7 +729,7 @@ function Education() {
         </FadeIn>
         <FadeIn delay={0.1}>
           <div
-            
+            className="edu-card"
             style={{
               padding: 28, borderRadius: 18,
               background: BG_CARD, border: `1px solid ${hovered ? ACCENT + "44" : BORDER}`,
@@ -836,6 +875,45 @@ export default function Portfolio() {
         ::-webkit-scrollbar-track { background: ${BG}; }
         ::-webkit-scrollbar-thumb { background: ${BORDER}; border-radius: 3px; }
         ::-webkit-scrollbar-thumb:hover { background: ${TEXT_DIM}; }
+
+        /* ---- Responsive / mobile layout ---- */
+        .nav-mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .nav-mobile-menu-open { max-height: 400px; }
+
+        @media (max-width: 820px) {
+          .nav-links { display: none !important; }
+          .hamburger-btn { display: flex !important; }
+          .nav-mobile-menu { display: flex !important; }
+
+          .hero-inner {
+            grid-template-columns: 1fr !important;
+            gap: 40px !important;
+            text-align: center;
+          }
+          .hero-inner p { max-width: 100% !important; }
+          .hero-socials { justify-content: center; }
+        }
+
+        @media (min-width: 821px) {
+          .nav-mobile-menu { display: none !important; }
+        }
+
+        @media (max-width: 700px) {
+          .cert-card { grid-template-columns: 1fr !important; }
+          .cert-image-wrap { border-right: none !important; border-bottom: 1px solid ${BORDER}; height: 200px !important; }
+        }
+
+        @media (max-width: 600px) {
+          .edu-card { flex-direction: column !important; align-items: center !important; text-align: center; }
+        }
+
+        @media (max-width: 480px) {
+          section { padding-left: 16px !important; padding-right: 16px !important; }
+          .nav-inner { padding-left: 16px !important; padding-right: 16px !important; }
+          .nav-mobile-menu { padding-left: 16px !important; padding-right: 16px !important; }
+          .projects-grid { grid-template-columns: 1fr !important; }
+          .skills-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)) !important; }
+        }
       `}</style>
       <Navbar />
       <Hero />
