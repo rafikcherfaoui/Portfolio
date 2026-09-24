@@ -10,7 +10,7 @@ const ACCENT_DIM = "#22d3ee33";
 const TEXT = "#fafafa";
 const TEXT_MED = "#a1a1aa";
 const TEXT_DIM = "#52525b";
-const GREEN = "#4ade80";
+
 
 //  Data 
 const NAV_LINKS = [
@@ -62,6 +62,9 @@ const SKILLS = [
   { name: "C", years: 4 },
   { name: "UML", years: 2 },
   { name: "n8n automations", years: 1 },
+  { name: "Docker", years: 1 },
+  { name: "Linux", years: 2 },
+  { name: "C++", years: 1 },
 ];
 
 const PROJECTS = [
